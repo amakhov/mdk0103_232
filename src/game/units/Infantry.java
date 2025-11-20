@@ -16,18 +16,6 @@ public class Infantry extends BattleUnit {
     }
 
     @Override
-    public void damage(int amount) {
-        if (!this.isAlive()) return;
-
-        this.healthScore -= amount;
-
-        if (this.healthScore <= 0) {
-            this.healthScore = 0;
-            this.broadcastDeath();
-        }
-    }
-
-    @Override
     protected void broadcastDeath() {
         System.out.println("Пехотинец умер");
     }

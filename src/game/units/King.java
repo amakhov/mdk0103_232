@@ -15,18 +15,6 @@ public class King extends Unit {
     }
 
     @Override
-    public void damage(int amount) {
-        if (!this.isAlive()) return;
-
-        this.healthScore -= amount;
-
-        if (this.healthScore <= 0) {
-            this.healthScore = 0;
-            this.broadcastDeath();
-        }
-    }
-
-    @Override
     protected void broadcastDeath() {
         System.out.println("Король умер");
     }

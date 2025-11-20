@@ -23,7 +23,18 @@ abstract public class Unit {
         return healthScore > 0;
     }
 
-    public abstract void damage(int amount);
+    // метод получения урона
+    public void damage(int amount)
+    {
+        if (!this.isAlive()) return;
+
+        this.healthScore -= amount;
+
+        if (this.healthScore <= 0) {
+            this.healthScore = 0;
+            this.broadcastDeath();
+        }
+    }
 
     // метод объявления о смерти персонажа
     protected abstract void broadcastDeath();
