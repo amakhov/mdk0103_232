@@ -24,7 +24,7 @@ public class Knight extends BattleUnit {
         if (!this.isAlive()) return;
 
         // для рыцаря учитываем защиту
-        this.healthScore -= amount * protection;
+        this.healthScore -= (int) ((1 - protection) * amount);
 
         if (this.healthScore <= 0) {
             this.healthScore = 0;
